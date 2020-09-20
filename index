@@ -12,7 +12,7 @@
             background-color: #FFCBCB;
         }
 
-     
+
 
 
         h1 {
@@ -53,6 +53,14 @@
             color: #132743;
             font-size: larger;
         }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-height: 300px;
+            border: 1px solid #407088;
+            border-radius: 5%;
+        }
     </style>
 </head>
 
@@ -63,13 +71,24 @@
         </header>
     </div>
     <div>
-        <h2>Check the fruity clock <br />
+        <h2><span class="changeName">Check the fruity clock</span> <br />
             <span class="clockstyle" id="clock">Clock</span></h2>
+    </div>
+    <div class="photoFruit">
+        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80"
+            alt="Fruits">
     </div>
     <div>
         <footer>Coded by Martini🍒</footer>
     </div>
     <script>
+        function yourName() {
+            let name = prompt("What is your name?");
+            changeName.innerText = `Hello, ${name}`;
+        }
+        let changeName = document.querySelector(".changeName");
+        changeName.addEventListener("click", yourName);
+
         function showTime() {
             var clock = document.getElementById('clock');
             var currentTime = new Date();
