@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruity Time!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #FFCBCB;
+        }
+
+        h1 {
+            color: #132743;
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: 45px;
+            text-align: center;
+            padding: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #70ADB5;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            font-size: 33px;
+
+        }
+
+        footer {
+
+            background-color: #407088;
+            width: 100%;
+            padding: 10px;
+            height: 80px;
+            text-align: center;
+            padding-top: 35px;
+            bottom: 0px;
+            position: absolute;
+
+            font-size: 25px;
+            font-family: 'Roboto';
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1> 🍎🥭🍍🍓Is it fruity time? 🥝🍇🍉🍒</h1>
+        </header>
+    </div>
+    <div>
+        <h2>Check the fruity clock <br />
+            <span id="clock">Clock</span></h2>
+    </div>
+    <div>
+        <footer>Coded by Martini🍒</footer>
+    </div>
+    <script>
+        function showTime() {
+            var clock = document.getElementById('clock');
+            var currentTime = new Date();
+            var hour = currentTime.getHours();
+            var minute = currentTime.getMinutes();
+            var second = currentTime.getSeconds();
+
+            if (minute < 10) {
+                minute = "0" + minute;
+            }
+            if (second < 10) {
+                second = "0" + second;
+            }
+            var clockTime = hour + ":" + minute + ":" + second;
+            clock.innerText = clockTime;
+        }
+
+        function updateClock() {
+            var time = new Date().getHours();
+            showTime();
+        }
+
+        updateClock();
+        var oneSecond = 1000;
+        setInterval(updateClock, oneSecond);
+    </script>
+</body>
+
+</html>
