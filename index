@@ -45,6 +45,11 @@
             font-family: 'Roboto';
 
         }
+
+        .clockstyle {
+            color: #132743;
+            font-size: larger;
+        }
     </style>
 </head>
 
@@ -56,7 +61,7 @@
     </div>
     <div>
         <h2>Check the fruity clock <br />
-            <span id="clock">Clock</span></h2>
+            <span class="clockstyle" id="clock">Clock</span></h2>
     </div>
     <div>
         <footer>Coded by Martini🍒</footer>
@@ -68,6 +73,7 @@
             var hour = currentTime.getHours();
             var minute = currentTime.getMinutes();
             var second = currentTime.getSeconds();
+            var milisecond = currentTime.getMilliseconds();
 
             if (minute < 10) {
                 minute = "0" + minute;
@@ -75,7 +81,7 @@
             if (second < 10) {
                 second = "0" + second;
             }
-            var clockTime = hour + ":" + minute + ":" + second;
+            var clockTime = "🍌" + hour + ":" + minute + ":" + second + " 🍈";
             clock.innerText = clockTime;
         }
 
